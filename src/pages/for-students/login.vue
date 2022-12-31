@@ -4,7 +4,7 @@ const { auth } = useSupabaseClient()
 
 watchEffect(() => {
   if (user.value) {
-    navigateTo('/tasks')
+    navigateTo('/index')
   }
 })
 
