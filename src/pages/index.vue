@@ -1,5 +1,6 @@
 <template>
-  aaああ
+  <TheHeader />
+  トップページ
 </template>
 
 <script setup>
