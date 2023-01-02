@@ -9,9 +9,9 @@
   </header>
   <div class="navigation-items">
     <Transition name="scroll">
-      <p v-if="isOpen">
+      <div v-if="isOpen">
         <TheMenu></TheMenu>
-      </p>
+      </div>
     </Transition>
   </div>
 </template>
@@ -55,18 +55,18 @@
 
 .scroll-enter-to {
   transition: transform 1.3s ease-out;
-  transform: translateX(0px);
+  /* transform: translateX(0px); */
 }
 .scroll-enter-from {
-  transform: translateX(-100px);
+  /* transform: translateX(-100px); */
 }
 
 .scroll-leave-to {
   transition: transform 1.3s ease-out;
-  transform: translateX(-100px);
+  /* transform: translateX(-100px); */
 }
 .scroll-leave-from {
-  transform: translateX(0px);
+  /* transform: translateX(0px); */
 }
 </style>
 
