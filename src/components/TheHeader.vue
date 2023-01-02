@@ -8,7 +8,7 @@
     </div>
   </header>
   <div class="navigation-items">
-    <Transition name="slide-fade">
+    <Transition name="scroll">
       <p v-if="isOpen">
         <TheMenu></TheMenu>
       </p>
@@ -51,6 +51,22 @@
 
 .navigation-items {
   position: fixed;
+}
+
+.scroll-enter-to {
+  transition: transform 1.3s ease-out;
+  transform: translateX(0px);
+}
+.scroll-enter-from {
+  transform: translateX(-100px);
+}
+
+.scroll-leave-to {
+  transition: transform 1.3s ease-out;
+  transform: translateX(-100px);
+}
+.scroll-leave-from {
+  transform: translateX(0px);
 }
 </style>
 
