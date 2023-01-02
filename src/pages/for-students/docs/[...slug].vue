@@ -43,7 +43,8 @@
         </div>
       </div>
     </ContentNavigation> -->
-    <ContentNavigation></ContentNavigation>
+    <ContentNavigation path="/for-students">
+    </ContentNavigation>
 
 
 

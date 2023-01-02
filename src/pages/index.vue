@@ -1,5 +1,5 @@
 <template>
-  <TheHeader />
+
   トップページ
 </template>
 
