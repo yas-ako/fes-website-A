@@ -12,7 +12,7 @@
         </div>
       </div>
     </ContentNavigation> -->
-    <pre>{{ data }}</pre>
+    <pre>{{ prev }} {{ next }}</pre>
   </div>
 </template>
 
@@ -40,6 +40,12 @@
 </style>
 
 <script setup>
+const contentQuery = await queryContent('for-students', 'docs')
 const { data: navigationData } = await useAsyncData('navigation', () => fetchContentNavigation());
-const data = navigationData[0];
+// const data = navigationData;
+const [prev, next] = await queryContent()
+  .only(['_path', 'title'])
+  .sort({ date: 1 })
+  .where({ isArchived: false })
+  .findSurround('/for-students/docs')
 </script>
