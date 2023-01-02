@@ -6,10 +6,10 @@
     <div class="icon_wrapper">
       <div class="icon material-icons md-48">menu</div>
     </div>
-    <div class="navigation-items">
-      <!-- <Transition name="slide-fade">
+    <div class="navigation-items" @click="isOpen.value = !isOpen.value">
+      <Transition name="slide-fade">
         <p v-if="show">hello</p>
-      </Transition> -->
+      </Transition>
     </div>
   </header>
 </template>
@@ -46,6 +46,10 @@
   display: block;
 }
 
+/* .navigation-items{
+
+} */
+
 /* .navigation-items {
 } */
 </style>
@@ -53,6 +57,5 @@
 <!-- let isOpen = useState('isOpen', () => false) -->
 <script setup>
 // import { ref, reactive } from 'vue';
-// const show = ref(true);
-
+const isOpen = ref(true);
 </script>

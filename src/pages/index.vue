@@ -1,5 +1,4 @@
 <template>
-
   トップページ
 </template>
 
