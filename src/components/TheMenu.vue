@@ -1,2 +1,4 @@
-<ContentNavigation>
-</ContentNavigation>
+<template>
+  <ContentNavigation>
+  </ContentNavigation>
+</template>
