@@ -3,15 +3,17 @@
     <div class="header_txt">
       <slot>みだし</slot>
     </div>
-    <div class="icon_wrapper"  @click="change()">
+    <div class="icon_wrapper" @click="change()">
       <div class="icon material-icons md-48">menu</div>
     </div>
-    <div class="navigation-items">
-      <Transition name="slide-fade">
-        <p v-if="isOpen">hello</p>
-      </Transition>
-    </div>
   </header>
+  <div class="navigation-items">
+    <Transition name="slide-fade">
+      <p v-if="isOpen">
+        <TheMenu></TheMenu>
+      </p>
+    </Transition>
+  </div>
 </template>
 
 <style scoped>
@@ -46,12 +48,9 @@
   display: block;
 }
 
-/* .navigation-items{
-
-} */
-
-/* .navigation-items {
-} */
+.navigation-items {
+  position: fixed;
+}
 </style>
 
 <!-- let isOpen = useState('isOpen', () => false) -->

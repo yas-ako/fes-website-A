@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-// import { ref, reactive } from 'vue';
+import { ref, reactive } from 'vue';
 // data
 const isOpen = ref(false);
 const checkedCategories = ref([])
