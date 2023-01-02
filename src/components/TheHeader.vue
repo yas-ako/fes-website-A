@@ -3,12 +3,12 @@
     <div class="header_txt">
       <slot>みだし</slot>
     </div>
-    <div class="icon_wrapper">
+    <div class="icon_wrapper"  @click="change()">
       <div class="icon material-icons md-48">menu</div>
     </div>
-    <div class="navigation-items" @click="change()">
+    <div class="navigation-items">
       <Transition name="slide-fade">
-        <p v-if="show">hello</p>
+        <p v-if="isOpen">hello</p>
       </Transition>
     </div>
   </header>
