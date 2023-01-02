@@ -32,6 +32,7 @@
 }
 
 .icon_wrapper {
+  z-index: 10;
   height: 100%;
   margin: auto 0;
   display: flex;
