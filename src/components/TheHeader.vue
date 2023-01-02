@@ -6,7 +6,7 @@
     <div class="icon_wrapper">
       <div class="icon material-icons md-48">menu</div>
     </div>
-    <div class="navigation-items" @click="isOpen.value = !isOpen.value">
+    <div class="navigation-items" @click="change()">
       <Transition name="slide-fade">
         <p v-if="show">hello</p>
       </Transition>
@@ -58,4 +58,7 @@
 <script setup>
 // import { ref, reactive } from 'vue';
 const isOpen = ref(true);
+const change = () => {
+  isOpen.value = !isOpen.value
+};
 </script>
