@@ -4,21 +4,25 @@
       <slot>みだし</slot>
     </div>
     <div class="icon_wrapper" @click="change()">
-      <div class="icon material-icons md-48">menu</div>
+      <div class="icon material-icons md-48" v-if="!isOpen">menu</div>
+      <div class="icon material-icons md-48" v-if="isOpen">close</div>
     </div>
   </header>
-  <div class="navigation-items">
-    <Transition name="scroll">
+  <!-- <div class="navigation-items"> -->
+    <Transition name="scroll" class="navigation-items">
       <div v-if="isOpen">
         <TheMenu></TheMenu>
       </div>
     </Transition>
-  </div>
+  <!-- </div> -->
+
 </template>
 
 <style scoped>
 .header {
-  /* height: 60px; */
+  /* position: fixed; */
+  height: 75px;
+  width: 100%;
   background-color: #ffd4ef;
   display: flex;
   justify-content: space-between;
@@ -40,6 +44,7 @@
 }
 
 .icon {
+  user-select: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
@@ -51,31 +56,53 @@
 
 .navigation-items {
   position: fixed;
+  /* position: absolute; */
+  height: 100%;
+  width: 100%;
+  /* z-index: -5; */
+  /* animation-duration: 0.3s; */
+  /* animation-fill-mode: both; */
+}
+
+.scroll-enter-from {
+  transform: translateX(100%);
+  height: 100%;
+  width: 100%;
 }
 
 .scroll-enter-to {
-  transition: transform 1.3s ease-out;
-  /* transform: translateX(0px); */
+  opacity: 1;
+  transform: translateX(0);
+  height: 100%;
+  width: 100%;
 }
 
-/* .scroll-enter-from { */
-/* transform: translateX(-100px); */
-/* } */
+.scroll-enter-active {
+  transition: all 0.4s ease;
+}
+
+.scroll-leave-from {
+  height: 100%;
+  width: 100%;
+  transform: translateX(0);
+}
 
 .scroll-leave-to {
-  transition: transform 1.3s ease-out;
-  /* transform: translateX(-100px); */
+  height: 100%;
+  width: 100%;
+  transform: translateX(100%);
 }
 
-/* .scroll-leave-from { */
-/* transform: translateX(0px); */
-/* } */
+.scroll-leave-active {
+  /* transition: all 2s; */
+  transition: all 0.4s ease;
+}
 </style>
 
 <!-- let isOpen = useState('isOpen', () => false) -->
 <script setup  lang="ts">
 // import { ref, reactive } from 'vue';
-const isOpen = ref(true);
+const isOpen = ref(false);
 const change = () => {
   isOpen.value = !isOpen.value
 };

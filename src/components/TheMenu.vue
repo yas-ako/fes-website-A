@@ -12,40 +12,55 @@
         </div>
       </div>
     </ContentNavigation> -->
-    <pre>{{ prev }} {{ next }}</pre>
+    <template v-for="section in navigationData[0].children[0].children">
+      <div class="main">
+        <NuxtLink v-if="!section.children" :to="section._path">{{ section.title }}</NuxtLink>
+        <div v-if="section.children">{{ section.title }}</div>
+      </div>
+      <template v-for="subsection in section.children">
+        <div class="sub">
+          <NuxtLink :to="subsection._path">{{ subsection.title }}</NuxtLink>
+        </div>
+      </template>
+    </template>
+    <!-- <pre>{{ navigationData[0].children[0].children }} </pre> -->
   </div>
 </template>
 
 <style scoped>
 .nav {
   padding: 1.5rem;
-  background-color: #ccddc2;
+  background-color: #fcf0fa;
   position: fixed;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   width: 100%;
-  height: 100%;
+  /* ヘッダーの75px分 */
+  height: calc(100% - 75px);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .main {
   display: block;
-  margin: 5px 0;
+  margin: 12px 0;
   font-size: 1.2rem;
 }
 
 .sub {
+  margin: 4px;
   font-size: 0.8rem;
   padding-left: 10px;
 }
 </style>
 
 <script setup>
-const contentQuery = await queryContent('for-students', 'docs')
+// const contentQuery = await queryContent('for-students', 'docs')
 const { data: navigationData } = await useAsyncData('navigation', () => fetchContentNavigation());
-// const data = navigationData;
-const [prev, next] = await queryContent()
-  .only(['_path', 'title'])
-  .sort({ date: 1 })
-  .where({ isArchived: false })
-  .findSurround('/for-students/docs')
+const pageData = navigationData;
+// const [prev, next] = await queryContent()
+//   .only(['_path', 'title'])
+//   .sort({ date: 1 })
+//   .where({ isArchived: false })
+//   .findSurround('/for-students/docs')
 </script>
