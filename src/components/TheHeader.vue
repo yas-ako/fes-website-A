@@ -57,21 +57,23 @@
   transition: transform 1.3s ease-out;
   /* transform: translateX(0px); */
 }
-.scroll-enter-from {
-  /* transform: translateX(-100px); */
-}
+
+/* .scroll-enter-from { */
+/* transform: translateX(-100px); */
+/* } */
 
 .scroll-leave-to {
   transition: transform 1.3s ease-out;
   /* transform: translateX(-100px); */
 }
-.scroll-leave-from {
-  /* transform: translateX(0px); */
-}
+
+/* .scroll-leave-from { */
+/* transform: translateX(0px); */
+/* } */
 </style>
 
 <!-- let isOpen = useState('isOpen', () => false) -->
-<script setup>
+<script setup  lang="ts">
 // import { ref, reactive } from 'vue';
 const isOpen = ref(true);
 const change = () => {
