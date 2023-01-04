@@ -9,24 +9,26 @@
     </div>
   </header>
   <!-- <div class="navigation-items"> -->
-    <Transition name="scroll" class="navigation-items">
-      <div v-if="isOpen">
-        <TheMenu></TheMenu>
-      </div>
-    </Transition>
+  <Transition name="scroll" class="navigation-items">
+    <div v-if="isOpen">
+      <TheMenu></TheMenu>
+    </div>
+  </Transition>
   <!-- </div> -->
 
 </template>
 
 <style scoped>
 .header {
-  /* position: fixed; */
+  position: fixed;
   height: 75px;
   width: 100%;
   background-color: #ffd4ef;
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  font-weight: 700;
+  top: 0;
 }
 
 .header_txt {
@@ -36,7 +38,7 @@
 }
 
 .icon_wrapper {
-  z-index: 10;
+  z-index: 20;
   height: 100%;
   margin: auto 0;
   display: flex;
@@ -55,6 +57,7 @@
 }
 
 .navigation-items {
+  /* margin-top: 75px; */
   position: fixed;
   /* position: absolute; */
   height: 100%;
@@ -106,4 +109,7 @@ const isOpen = ref(false);
 const change = () => {
   isOpen.value = !isOpen.value
 };
+
+const route = useRoute();
+watch(() => route.query, () => isOpen.value = false)
 </script>
