@@ -1,8 +1,10 @@
 <template>
   <header class="header">
-    <div class="header_txt">
-      <slot>みだし</slot>
-    </div>
+    <NuxtLink to="/">
+      <div class="header_txt">
+        <slot>みだし</slot>
+      </div>
+    </NuxtLink>
     <div class="icon_wrapper" @click="change()">
       <div class="icon material-icons md-48" v-if="!isOpen">menu</div>
       <div class="icon material-icons md-48" v-if="isOpen">close</div>
@@ -18,7 +20,7 @@
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
   position: fixed;
   height: 75px;
@@ -29,6 +31,10 @@
   padding: 20px;
   font-weight: 700;
   top: 0;
+
+  :hover {
+    text-decoration: none;
+  }
 }
 
 .header_txt {

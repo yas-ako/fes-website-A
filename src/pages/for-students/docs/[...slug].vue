@@ -50,13 +50,19 @@
 
 
 
-    <ContentDoc>
-      <template #not-found>
-        <h1>Document not found</h1>
-      </template>
-      <template #empty>
-        <h1>Document is empty</h1>
-      </template>
+    <!-- <ContentDoc class="nuxt-content"> -->
+    <ContentDoc v-slot="{ doc }">
+      <div class="nuxt-content">
+        <h1>{{ doc.title }}</h1>
+        <div v-if="doc.description" class="description">{{ doc.description }}</div>
+        <ContentRenderer :value="doc" />
+        <!-- <template #not-found>
+          <h1>Document not found</h1>
+        </template>
+        <template #empty>
+          <h1>Document is empty</h1>
+        </template> -->
+      </div>
     </ContentDoc>
 
 
@@ -67,9 +73,11 @@
 </template>
 
 <script setup>
-const { data: navigationData } = await useAsyncData('navigation', () => fetchContentNavigation())
+// const { data: navigationData } = await useAsyncData('navigation', () => fetchContentNavigation())
 </script>
 
 <style scoped>
-
+.nuxt-content p {
+  padding: 10px;
+}
 </style>

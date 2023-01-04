@@ -1,6 +1,6 @@
 <template>
   <!-- <div> -->
-    <TheHeader>74th記念祭</TheHeader>
+    <TheHeader>75th記念祭</TheHeader>
   <!-- </div> -->
   <div class="page">
     <NuxtPage />
