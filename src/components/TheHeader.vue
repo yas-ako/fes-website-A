@@ -31,6 +31,7 @@
   padding: 20px;
   font-weight: 700;
   top: 0;
+  line-height: 1;
 
   :hover {
     text-decoration: none;
