@@ -13,6 +13,7 @@
     "sass": "^1.57.1"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.0.0-beta.12",
     "@nuxt/content": "^2.3.0"
   }
 }
