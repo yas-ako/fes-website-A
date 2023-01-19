@@ -1,10 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const { API_KEY, SERVICE_DOMAIN } = process.env;
+
 export default defineNuxtConfig({
   srcDir: 'src/',
   modules: [
     '@nuxtjs/supabase',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@formkit/nuxt'
   ],
+  runtimeConfig: {
+    apiKey: API_KEY,
+    serviceDomain: SERVICE_DOMAIN
+  },
   supabase: {
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,
@@ -71,13 +78,9 @@ export default defineNuxtConfig({
     '/assets/css/style.css',
     '/assets/css/style.scss'
   ],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // additionalData: '@import "@/assets/css/style.scss";',
-        },
-      },
-    },
-  },
+  // formkit: {
+  //   // configFile: './
+  //   // theme: 'genesis'
+  //   // configFile :
+  // }
 })

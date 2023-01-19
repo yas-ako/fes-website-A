@@ -1,6 +1,6 @@
 <template>
   <!-- <div> -->
-    <TheHeader>75th記念祭</TheHeader>
+  <TheHeader>75th記念祭</TheHeader>
   <!-- </div> -->
   <div class="page">
     <NuxtPage />
@@ -13,3 +13,10 @@
   height: 100%;
 }
 </style>
+
+<!-- <script setup>
+import { plugin, defaultConfig } from '@formkit/vue'
+defaultConfig{
+
+}
+</script> -->
