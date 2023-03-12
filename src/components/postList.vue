@@ -14,7 +14,7 @@ const { postdata } = defineProps<Props>()
     <article class="article" v-for="post in postdata" :key="post.id">
       <span class="published">{{ $formatDate(String(post.publishedAt)) }}</span>
       <span v-for="tag in post.tag" :key="tag.id" class="tag">{{ tag.name }}</span>
-      <nuxt-link :to="`/news/${post.id}`">
+      <nuxt-link :to="`/news/${post.id}/`">
         <h1 class="title">
           {{ post.title }}
         </h1>
