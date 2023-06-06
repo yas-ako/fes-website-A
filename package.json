@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxt/content": "^2.6.0",
     "@formkit/nuxt": "^1.0.0-220222.4d97af0",
-    "dayjs": "^1.11.7",
+    "dayjs": "^1.11.8",
     "microcms-js-sdk": "^2.5.0"
   }
 }
